@@ -1,19 +1,20 @@
-'use client'
+"use client";
 import Spotlight from "./components/spotlight";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import crazym416 from "../public/crazym416.webp";
 
 export default function Page() {
-    const [activeLink, setActiveLink] = useState('#about'); 
-    const links = [
-        { href: '#about', label: 'About' },
-        { href: '#experience', label: 'Experience' },
-        { href: '#projects', label: 'Projects' },
-      ];
+  const [activeLink, setActiveLink] = useState("#about");
+  const links = [
+    { href: "#about", label: "About" },
+    { href: "#experience", label: "Experience" },
+    { href: "#projects", label: "Projects" },
+  ];
   return (
     <>
-      <Spotlight/>
+      <Spotlight />
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-16 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-4">
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24">
@@ -29,44 +30,38 @@ export default function Page() {
                 for the modern web.
               </p>
               <nav
-      className="nav hidden lg:block"
-      aria-label="In-page jump links"
-    >
-      <ul className="mt-16 w-max">
-        {links.map(({ href, label }) => (
-          <li key={href}>
-            <Link
-              href={href}
-              onClick={() => setActiveLink(href)}
-              className={`group flex items-center py-3 ${
-                activeLink === href ? 'text-slate-200' : 'text-slate-500'
-              }`}
-            >
-              <span
-                className={`nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all 
-                  group-hover:w-16 group-hover:bg-slate-200 
-                  group-focus-visible:w-16 group-focus-visible:bg-slate-200 
-                  ${
-                    activeLink === href
-                      ? 'w-16 bg-slate-200'
-                      : ''
-                  }`}
-              />
-              <span
-                className={`nav-text text-xs font-bold uppercase tracking-widest 
+                className="nav hidden lg:block"
+                aria-label="In-page jump links"
+              >
+                <ul className="mt-16 w-max">
+                  {links.map(({ href, label }) => (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        onClick={() => setActiveLink(href)}
+                        className={`group flex items-center py-3 ${
+                          activeLink === href
+                            ? "text-slate-200"
+                            : "text-slate-500"
+                        }`}
+                      >
+                        <span
+                          className={`nav-indicator mr-4 h-px bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none 
+                  ${activeLink === href ? "bg-slate-200 w-16" : "w-8 text-slate-600"}`}
+                        />
+                        <span
+                          className={`nav-text text-xs font-bold uppercase tracking-widest 
                   group-hover:text-slate-200 
                   group-focus-visible:text-slate-200 
-                  ${
-                    activeLink === href ? 'text-slate-200' : 'text-slate-500'
-                  }`}
-              >
-                {label}
-              </span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+                  ${activeLink === href ? "text-slate-200" : "text-slate-500"}`}
+                        >
+                          {label}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
             <ul
               className="ml-1 mt-8 flex items-center"
@@ -150,7 +145,7 @@ export default function Page() {
               </div>
               <div>
                 <p className="mb-4">
-                  I&apos;m an engineer with Link passion for creating intuitive,
+                  I&apos;m an engineer with passion for creating intuitive,
                   accessible, and beautifully crafted user interfaces that
                   seamlessly blend thoughtful design with robust engineering. I
                   thrive at the intersection of design and development, where I
@@ -158,7 +153,7 @@ export default function Page() {
                   meticulously optimized for performance and usability.
                 </p>
                 <p className="mb-4">
-                  Currently, I&apos;m Link Graduate Student at{" "}
+                  Currently, I&apos;m Graduate Student at{" "}
                   <Link
                     className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
                     href="https://w2.csun.edu/"
@@ -168,15 +163,15 @@ export default function Page() {
                   >
                     California State University, Northridge
                   </Link>
-                  , specializing in Computer Engineering. With Link strong focus on
-                  computer science disciplines such as AI, machine learning, and
-                  software development. My journey has been shaped by Link
+                  , specializing in Computer Engineering. With strong focus
+                  on computer science disciplines such as AI, machine learning,
+                  and software development. My journey has been shaped by
                   combination of professional experience, academic achievements,
                   online certifications, and hands-on learning through building
                   impactful projects.
                 </p>
                 <p className="mb-4">
-                  In the past, I’ve had the chance to work on Link variety of
+                  In the past, I’ve had the chance to work on variety of
                   exciting projects, from building dashboards and CMS platforms
                   at{" "}
                   <Link
@@ -186,13 +181,13 @@ export default function Page() {
                     rel="noreferrer noopener"
                     aria-label="LogiNext Solutions (opens in Link new tab)"
                   >
-                    LogiNext Solutions
+                    LogiNext Solutions.{" "}
                   </Link>
                   I love creating accessible, high-performing web experiences
                   and enjoy working across both front-end and back-end
                   technologies like ReactJS, NodeJS, and MongoDB. Beyond coding,
-                  I&apos;ve always been passionate about sharing knowledge—whether
-                  it&apos;s as Link{" "}
+                  I&apos;ve always been passionate about sharing
+                  knowledge—whether it&apos;s as {" "}
                   <Link
                     className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
                     href="https://www.csun.edu/counseling/peer-education"
@@ -346,36 +341,73 @@ export default function Page() {
               className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
               aria-label="Selected projects"
             >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-            <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
-            Projects
-            </h2>
-           
-            </div>
-            <div>
+              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
+                  Projects
+                </h2>
+              </div>
+              <div>
                 <ul className="group/list">
-                <li className="mb-12">
+                  <li className="mb-12">
                     <div className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                    <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
+                      <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+                      <div className="z-10 sm:order-2 sm:col-span-6">
+                        <h3>
+                          <Link
+                            className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            href="https://www.crazym416.com/"
+                            aria-label="Build Link Gaming Blog (opens in Link new tab)"
+                          >
+                            <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                            <span>
+                              Build Gaming Blog - Crazym416
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                  clipRule="evenodd"
+                                ></path>
+                              </svg>
+                            </span>
+                          </Link>
+                        </h3>
+                        <p className="mt-2 text-sm leading-normal">
+                          {" "}
+                          CrazyM416 is comprehensive blog dedicated to PUBG
+                          Mobile enthusiasts and tech-savvy individuals. It
+                          offers the latest news, tips, and tricks related to
+                          PUBG Mobile, including updates on new features like
+                          Payload 2.0 and vehicle customization options.
+                        </p>
+                      </div>
+                      <Image
+                        alt="Build Link Gaming Blog App for Pubg Players"
+                        unoptimized
+                        loading="lazy"
+                        width={200}
+                        height={48}
+                        decoding="async"
+                        data-nimg="1"
+                        className="aspect-video object-cover rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1"
+                        style={{ color: "transparent" }}
+                        src={crazym416}
+                      />
                     </div>
-                    <div className="z-10 sm:order-2 sm:col-span-6">
-                    <h3><Link className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" target="_blank" rel="noreferrer noopener" href="https://www.crazym416.com/" aria-label="Build Link Gaming Blog (opens in Link new tab)">
-                    <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                    <span>Build Link Gaming Blog - Crazym416
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd"></path></svg>
-                    </span>
-                    </Link></h3>
-                    <p className="mt-2 text-sm leading-normal"> CrazyM416 is Link comprehensive blog dedicated to PUBG Mobile enthusiasts and tech-savvy individuals. It offers the latest news, tips, and tricks related to PUBG Mobile, including updates on new features like Payload 2.0 and vehicle customization options.</p>
-                    </div>
-                    <Image alt="Build Link Gaming Blog App for Pubg Players" loading="lazy" width={200} height={48} decoding="async" data-nimg='1' className="aspect-video object-cover rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1" style={{color:'transparent'}} src="/projects/crazym416.webp"/>
-                    </div>
-                </li>
+                  </li>
                 </ul>
-            </div>
+              </div>
             </section>
           </main>
         </div>
       </div>
-      </>
+    </>
   );
 }

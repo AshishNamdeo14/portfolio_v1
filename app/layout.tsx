@@ -1,5 +1,6 @@
 import '@/app/ui/globals.css';
 import { Metadata} from 'next';
+import Analytics from './components/Analytics'
 import { inter } from './ui/fonts';
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
         <link rel="manifest" href="/site.webmanifest"></link>
         </head>
+        <Analytics/>
         <body className={`${inter.className} antialiased bg-slate-900 leading-relaxed text-slate-400 selection:bg-teal-300 selection:text-teal-900`}>{children}</body>
       </html>
     );
